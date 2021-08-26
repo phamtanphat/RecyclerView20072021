@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/RecyclerView20072021/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29010416666666666" />
+        <entry key="..\:/RecyclerView20072021/app/src/main/res/layout/activity_main.xml" value="0.4569939183318853" />
+        <entry key="..\:/RecyclerView20072021/app/src/main/res/layout/item_food.xml" value="0.7041499330655957" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
