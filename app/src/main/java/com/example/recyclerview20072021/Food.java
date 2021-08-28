@@ -53,21 +53,6 @@ public class Food {
                 new Food(R.drawable.hinh_bun_dau,"Bún đậu mắm tôm",50000),
                 new Food(R.drawable.hinh_com_suon,"Cơm sườn",60000),
                 new Food(R.drawable.hinh_hu_tieu,"Hủ tiếu nam vang",30000),
-                new Food(R.drawable.hinh_tra_sua,"Trà sữa",25000),
-                new Food(R.drawable.hinh_bun_bo,"Bún bò",40000),
-                new Food(R.drawable.hinh_bun_dau,"Bún đậu mắm tôm",50000),
-                new Food(R.drawable.hinh_com_suon,"Cơm sườn",60000),
-                new Food(R.drawable.hinh_hu_tieu,"Hủ tiếu nam vang",30000),
-                new Food(R.drawable.hinh_tra_sua,"Trà sữa",25000),
-                new Food(R.drawable.hinh_bun_bo,"Bún bò",40000),
-                new Food(R.drawable.hinh_bun_dau,"Bún đậu mắm tôm",50000),
-                new Food(R.drawable.hinh_com_suon,"Cơm sườn",60000),
-                new Food(R.drawable.hinh_hu_tieu,"Hủ tiếu nam vang",30000),
-                new Food(R.drawable.hinh_tra_sua,"Trà sữa",25000),
-                new Food(R.drawable.hinh_bun_bo,"Bún bò",40000),
-                new Food(R.drawable.hinh_bun_dau,"Bún đậu mắm tôm",50000),
-                new Food(R.drawable.hinh_com_suon,"Cơm sườn",60000),
-                new Food(R.drawable.hinh_hu_tieu,"Hủ tiếu nam vang",30000),
                 new Food(R.drawable.hinh_tra_sua,"Trà sữa",25000)
         );
     }

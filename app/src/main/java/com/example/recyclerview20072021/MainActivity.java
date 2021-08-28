@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
         mRcvFood.setLayoutManager(new LinearLayoutManager(this));
         mRcvFood.setHasFixedSize(true);
         mRcvFood.setAdapter(mFoodAdapter);
+
+
+        mFoodAdapter.setOnItemListener(new OnItemListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(MainActivity.this, mListFood.get(position).getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
