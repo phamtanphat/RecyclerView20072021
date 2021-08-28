@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRcvFood;
     List<Food> mListFood;
     FoodAdapter mFoodAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,15 @@ public class MainActivity extends AppCompatActivity {
         mFoodAdapter.setOnItemListener(new OnItemListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(MainActivity.this, mListFood.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        MainActivity.this,
+                        "Xóa món " + mListFood.get(position).getName(),
+                        Toast.LENGTH_SHORT)
+                     .show();
+                mListFood.remove(mListFood.get(position));
+                mFoodAdapter.notifyItemRemoved(position);
+//                mFoodAdapter.notifyItemRangeRemoved(position, mListFood.size());
+
             }
         });
     }

@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/RecyclerView20072021/app/src/main/res/drawable/ic_delete.xml" value="0.29010416666666666" />
         <entry key="..\:/RecyclerView20072021/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29010416666666666" />
         <entry key="..\:/RecyclerView20072021/app/src/main/res/layout/activity_main.xml" value="0.4569939183318853" />
-        <entry key="..\:/RecyclerView20072021/app/src/main/res/layout/item_food.xml" value="0.7041499330655957" />
+        <entry key="..\:/RecyclerView20072021/app/src/main/res/layout/item_food.xml" value="0.4" />
       </map>
     </option>
   </component>

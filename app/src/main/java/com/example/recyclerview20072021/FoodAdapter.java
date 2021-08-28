@@ -45,14 +45,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
         ImageView img;
         TextView tvName,tvPrice;
+        ImageView imgDelete;
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.imageView);
             tvName = itemView.findViewById(R.id.textViewName);
             tvPrice = itemView.findViewById(R.id.textViewPrice);
+            imgDelete = itemView.findViewById(R.id.imageViewDelete);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (onItemListener != null){

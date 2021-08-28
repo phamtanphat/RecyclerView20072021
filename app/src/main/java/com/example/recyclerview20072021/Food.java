@@ -1,5 +1,6 @@
 package com.example.recyclerview20072021;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -48,12 +49,12 @@ public class Food {
     }
 
     public static List<Food> getMock(){
-        return Arrays.asList(
+        return new ArrayList<>(Arrays.asList(
                 new Food(R.drawable.hinh_bun_bo,"Bún bò",40000),
                 new Food(R.drawable.hinh_bun_dau,"Bún đậu mắm tôm",50000),
                 new Food(R.drawable.hinh_com_suon,"Cơm sườn",60000),
                 new Food(R.drawable.hinh_hu_tieu,"Hủ tiếu nam vang",30000),
                 new Food(R.drawable.hinh_tra_sua,"Trà sữa",25000)
-        );
+        ));
     }
 }
