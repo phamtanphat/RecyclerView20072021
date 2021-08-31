@@ -54,7 +54,7 @@ public class FoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (holder.getItemViewType() == TYPE_ITEM){
-            ((FoodViewHolder)holder).onBindView(listFood.get(position));
+            ((FoodViewHolder)holder).onBindView(listFood.get(position) , position);
         }
     }
 
@@ -86,9 +86,9 @@ public class FoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             });
         }
 
-        public void onBindView(Food food){
+        public void onBindView(Food food , int position){
             img.setImageResource(food.getImage());
-            tvName.setText(food.getName());
+            tvName.setText(food.getName() + " " + position);
             NumberFormat formatter = new DecimalFormat("#,###");
             tvPrice.setText("Giá " + formatter.format(food.getPrice()));
         }
