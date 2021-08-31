@@ -4,16 +4,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
+public class FoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+
+    private final int TYPE_ITEM = 0;
+    private final int TYPE_LOADING = 1;
+    private boolean isLoading = false;
+
 
     List<Food> listFood;
     OnItemListener onItemListener;
@@ -22,18 +29,33 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         this.listFood = listFood;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if (position == listFood.size() - 1 && isLoading){
+            return TYPE_LOADING;
+        }
+        return TYPE_ITEM;
+    }
+
     @NonNull
     @Override
-    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Khai báo lớp đối tượng để convert kiểu int sang kiểu view
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_food,parent,false);
-        return new FoodViewHolder(view);
+        if (TYPE_ITEM == viewType){
+            View view = layoutInflater.inflate(R.layout.item_food,parent,false);
+            return new FoodViewHolder(view);
+        }else{
+            View view = layoutInflater.inflate(R.layout.item_loading,parent,false);
+            return new LoadingViewHolder(view);
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        holder.onBindView(listFood.get(position));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if (holder.getItemViewType() == TYPE_ITEM){
+            ((FoodViewHolder)holder).onBindView(listFood.get(position));
+        }
     }
 
     @Override
@@ -72,7 +94,30 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         }
     }
 
+    class LoadingViewHolder extends RecyclerView.ViewHolder{
+
+        ProgressBar progressBarLoading;
+
+        public LoadingViewHolder(@NonNull View itemView) {
+            super(itemView);
+            progressBarLoading = itemView.findViewById(R.id.progressbarLoading);
+        }
+    }
+
     public void setOnItemListener(OnItemListener onItemListener){
         this.onItemListener = onItemListener;
     }
+
+    public void addFooterLoading(){
+        isLoading = true;
+        listFood.add(null);
+    }
+
+    public void removeLoading(){
+        isLoading = false;
+        int position = listFood.size() - 1;
+        listFood.remove(position);
+        notifyItemRemoved(position);
+    }
+
 }
