@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         mRcvFood = findViewById(R.id.recyclerView);
         mListFood = Food.getMock();
-        mFoodAdapter = new FoodAdapter(mListFood);
 
+        mFoodAdapter = new FoodAdapter(mListFood);
+        mFoodAdapter.addFooterLoading();
         mRcvFood.setLayoutManager(new LinearLayoutManager(this));
         mRcvFood.setHasFixedSize(true);
         mRcvFood.setAdapter(mFoodAdapter);
@@ -82,9 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Log.d("BBB",mCurrentPage + "");
-                if (mCurrentPage > 2){
-                    mFoodAdapter.removeLoading();
-                }
+                mFoodAdapter.removeLoading();
                 mListFood.addAll(Food.getMock());
                 mFoodAdapter.notifyDataSetChanged();
                 mLoading = false;
